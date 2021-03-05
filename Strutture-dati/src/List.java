@@ -7,6 +7,7 @@ public abstract class List {
     // rimuove tutte le occorenze di x
     public abstract List remove(int x);
 
+    /*
     // rimuove l'elemento in posizione i
     public abstract List removeAtIndex(int i);
 
@@ -18,6 +19,10 @@ public abstract class List {
 
     // true se la lista è ordinata
     public abstract boolean ordinata(int next);
+*/
+    public abstract int length();
+
+
 
     // per i forti: true se è ordinata crescente o decrescente, false altrimenti
     // public abstract boolean ordinataCrescenteDecrescente(....)

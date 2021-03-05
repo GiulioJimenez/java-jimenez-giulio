@@ -2,6 +2,8 @@ public class Main {
 
     public static void main(String[] args) {
 	    List l = new Node(1, new Node(2, new Node(3, new Nil())));
+
+	    l = l.add(4, 1);
 /*
 	    Nil nil = new Nil();
 	    Node n3 = new Node(3, nil);
@@ -10,11 +12,11 @@ public class Main {
         List l1 = n1;*/
 
         System.out.println(l);
-        l = new Node(0, l);
+        // l = new Node(0, l);
 
-        System.out.println(l);
+        // l = l.addLast(4);
+        // System.out.println(l);
 
-        l = l.addLast(4);
-        System.out.println(l);
+        l = l.add(4, 1);
     }
 }
