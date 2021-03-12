@@ -35,4 +35,8 @@ public class Stack<T> {
         }
     }
 
+    public int size() {
+        return values.size();
+    }
+
 }

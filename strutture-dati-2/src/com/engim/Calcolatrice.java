@@ -15,6 +15,22 @@ public class Calcolatrice {
                 double d = Double.parseDouble(elem);
                 stack.push(d);
             } catch (Exception e) {
+                switch (elem) {
+                    case "+":
+                        addizione(stack);
+                        break;
+                    case "-":
+                        sottrazione(stack);
+                        break;
+                    case "*":
+                        moltiplicazione(stack);
+                    case "/":
+                        divisione(stack);
+                        break;
+                    default:
+                        System.out.println("Errore");
+                        System.exit(0);
+                }
 
             }
         }
@@ -23,7 +39,43 @@ public class Calcolatrice {
 
     }
 
-    public static void somma(Stack<Double> stack) {
+    public static void addizione(Stack<Double> stack) {
+        if(stack.size() > 1) {
+            Double a = stack.pop();
+            Double b = stack.pop();
+            stack.push(a+b);
+        }else {
+            System.out.println("Errore nella sintassi");
+        }
+    }
 
+    public static void sottrazione(Stack<Double> stack) {
+        if(stack.size() > 1) {
+            Double a = stack.pop();
+            Double b = stack.pop();
+            stack.push(b-a);
+        }else {
+            System.out.println("Errore nella sintassi");
+        }
+    }
+
+    public static void moltiplicazione(Stack<Double> stack) {
+        if(stack.size() > 1) {
+            Double a = stack.pop();
+            Double b = stack.pop();
+            stack.push(a*b);
+        }else {
+            System.out.println("Errore nella sintassi");
+        }
+    }
+
+    public static void divisione(Stack<Double> stack) {
+        if(stack.size() > 1) {
+            Double a = stack.pop();
+            Double b = stack.pop();
+            stack.push(b/a);
+        }else {
+            System.out.println("Errore nella sintassi");
+        }
     }
 }
