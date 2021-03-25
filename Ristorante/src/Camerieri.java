@@ -1,4 +1,5 @@
 public class Camerieri extends Personale{
+
     public Camerieri(String nome, Coda coda) {
         super(nome, coda);
     }
@@ -8,6 +9,4 @@ public class Camerieri extends Personale{
         Ordine ordine = new Ordine(piatto,tavolo,this);
         getCoda().aggiungiOrdine(ordine);
     }
-
-
 }

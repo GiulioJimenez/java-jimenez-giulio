@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 
 public class Coda {
     private Ordine[] ordini;
@@ -14,6 +14,11 @@ public class Coda {
     public void aggiungiOrdine(Ordine ordine) {
         this.ordini[this.nextDaOrdinare] = ordine;
         this.nextDaOrdinare++;
+    }
+
+    public void evadiOrdine() {
+        if (nextDaCucinare < nextDaOrdinare)
+        this.ordini[this.nextDaCucinare++].setEvaso();
     }
 
     @Override

@@ -28,6 +28,10 @@ public class Ordine {
         return camerieri;
     }
 
+    public void setEvaso() {
+
+    }
+
     public Stato getStato() {
         return stato;
     }

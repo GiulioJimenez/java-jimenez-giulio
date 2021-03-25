@@ -15,8 +15,6 @@ public class Personale {
         this.nome = nome;
     }
 
-    public Coda getCoda() {
-        return coda;
-    }
+    public Coda getCoda() { return coda; }
 }
 
