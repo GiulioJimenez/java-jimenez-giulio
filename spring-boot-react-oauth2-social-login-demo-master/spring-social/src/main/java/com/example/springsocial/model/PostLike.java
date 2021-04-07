@@ -1,11 +1,10 @@
-
 package com.example.springsocial.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-public class Comment {
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+public class PostLike {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +17,6 @@ public class Comment {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="post", referencedColumnName="id")
     private Post post;
-
-    private String text;
-
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
 
     public Long getId() {
         return id;
@@ -47,21 +40,5 @@ public class Comment {
 
     public void setPhoto(Post post) {
         this.post = post;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 }
