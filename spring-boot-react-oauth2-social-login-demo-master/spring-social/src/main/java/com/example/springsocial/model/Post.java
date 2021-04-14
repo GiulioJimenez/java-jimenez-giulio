@@ -1,5 +1,7 @@
 package com.example.springsocial.model;
 
+import net.minidev.json.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +19,7 @@ public class Post {
     @JoinColumn(name="owner", referencedColumnName="id")
     private User owner;
 
+
     private String description;
 
 
@@ -29,6 +32,7 @@ public class Post {
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
+    @JsonIgnore
     @OneToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="photo", referencedColumnName="id")
     private Photo photo;
@@ -49,20 +53,28 @@ public class Post {
         this.owner = owner;
     }
 
+    public List<PostLike> getPostLikes() {
+        return postLikes;
+    }
+
+    public void setPostLikes(List<PostLike> postLikes) {
+        this.postLikes = postLikes;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<PostLike> getPhotoLikes() {
-        return postLikes;
-    }
-
-    public void setPhotoLikes(List<PostLike> postLikes) {
-        this.postLikes = postLikes;
     }
 
     public List<Comment> getComments() {
@@ -79,21 +91,5 @@ public class Post {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public List<PostLike> getPostLikes() {
-        return postLikes;
-    }
-
-    public void setPostLikes(List<PostLike> postLikes) {
-        this.postLikes = postLikes;
-    }
-
-    public Photo getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(Photo photo) {
-        this.photo = photo;
     }
 }

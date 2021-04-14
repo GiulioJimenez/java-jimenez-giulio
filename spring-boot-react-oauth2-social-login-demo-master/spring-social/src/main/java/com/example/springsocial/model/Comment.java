@@ -1,4 +1,3 @@
-
 package com.example.springsocial.model;
 
 import javax.persistence.*;
